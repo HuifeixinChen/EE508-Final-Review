@@ -1,0 +1,3 @@
+export default function FlashAttentionVisual() {
+  return <section className="playground"><h3>FlashAttention Memory IO Visual</h3><p>Standard attention 会在 HBM 中物化 <code>n x n</code> attention matrix。FlashAttention 使用 tiling/blocking，在 SRAM/shared memory 中处理 tile，减少 HBM 读写。</p><div className="io-visual"><div><b>Standard</b><span>QK^T matrix</span><span>stored in HBM</span><span>large n x n writes</span></div><div><b>FlashAttention</b><span>Q/K/V tiles</span><span>SRAM/shared memory</span><span>same result, fewer transfers</span></div></div><p className="takeaway">考试 takeaway：FlashAttention is exact attention, IO-aware, not approximate attention。</p></section>;
+}
